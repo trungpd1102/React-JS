@@ -1,27 +1,16 @@
-//import './App.scss';
-import { useState } from 'react';
+import './App.scss';
+// import { useState } from 'react';
 
-import ToDoList from './components/ToDoList/ToDoList';
-import ColorBox from './components/ColorBox/ColorBox';
+// import ColorBox from './components/ColorBox/ColorBox';
+import Todolist from './components/TodoList/Index'
 
 function App() {
-  const [color, setColors] = useState('gray');
-
-  function handleColor() {
-    setColors('tomato');
-  }
 
   return (
-    <ColorBox />
-    // <div className="app">
-    //   <h1
-    //     style={{color: color}}
-    //   >
-    //     Hello React Hook
-    //   </h1>
-    //   <button onClick={handleColor}>Change Color</button>
-    // </div>
+    <div className="app">
+      <Todolist />
+    </div>
+
   );
 }
-
 export default App;

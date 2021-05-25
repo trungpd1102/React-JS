@@ -1,29 +1,39 @@
-import { useState } from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-function ToDoList() {
-    const [list, setList] = useState(['JavaScript', 'Python', 'ReactJS', "NodeJS"]);
+List.propTypes = {
+    todos: PropTypes.array,
+    onTodoClick: PropTypes.func,
+};
 
-    function removeItem(index) {
-        const newList = [...list];
+List.defaultProps = {
+    todos: [],
+    onTodoClick: null,
+}
 
-        newList.splice(index, 1);
-        console.log(newList);
-        setList(newList);
+function List(props) {
+    const { todos, onTodoClick } = props;
+    console.log(todos);
+    function handleClick(todo) {
+        if (onTodoClick) onTodoClick(todo)
     }
 
     return (
-        <ul>
-            {list.map((item, index) =>
-                <li
-                    key={index}
-                >
-                    <button onClick={() => removeItem(index)}>
-                        {item}
-                    </button>
-                </li>
-            )}
-        </ul>
+        <div>
+            <ul className='to-do'>
+                {todos.map(todo => (
+                    <li
+                        key={todo.id}
+                        id={todo.id}
+                        onClick={() => handleClick(todo)}
+                        style={{ cursor: 'pointer' }}
+                    >
+                        {todo.title}
+                    </li>
+                ))}
+            </ul>
+        </div>
     );
-};
+}
 
-export default ToDoList;
+export default List;
