@@ -34,9 +34,12 @@ export default function FeedbackForm() {
                 disabled={isSending}
                 value={text}
                 onChange={e => setText(e.target.value)}
+                cols={50}
+                rows={5}
             />
             <br />
             <button
+                className='primary'
                 disabled={isSending}
                 type="submit"
             >
