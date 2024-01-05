@@ -12,7 +12,6 @@ const initialItems = [
 ];
 
 export default function Menu({ defaultProp }: { defaultProp: string }) {
-  // TODO: Ask for define type of items
   const [items, setItems] = useState<Item[]>(initialItems);
   const [selectedItem, setSelectedItem] = useState<Item>(items[0]);
 

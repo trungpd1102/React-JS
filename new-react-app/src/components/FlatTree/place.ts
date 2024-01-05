@@ -4,7 +4,6 @@ export interface Place {
   childIds: number[]
 }
 
-// TODO: how to define type of this object
 export const initialTravelPlan = {
   0: {
     id: 0,
