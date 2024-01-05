@@ -1,21 +1,21 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-interface PoinPosition {
-  x: number,
-  y: number
+interface PointPosition {
+  x: number;
+  y: number;
 }
 
 export default function MovingDot() {
-  const [position, setPosition] = useState<PoinPosition>({
+  const [position, setPosition] = useState<PointPosition>({
     x: 0,
-    y: 0
+    y: 0,
   });
   return (
     <div
-      onPointerMove={e => {
+      onPointerMove={(e) => {
         setPosition({
           y: e.clientY,
-          x: e.clientX
+          x: e.clientX,
         });
 
         // // keep position y
@@ -25,20 +25,23 @@ export default function MovingDot() {
         // });
       }}
       style={{
-        position: 'relative',
-        width: '100vw',
-        height: '100vh',
-      }}>
-      <div style={{
-        position: 'absolute',
-        backgroundColor: 'red',
-        borderRadius: '50%',
-        transform: `translate(${position.x}px, ${position.y}px)`,
-        left: -10,
-        top: -10,
-        width: 20,
-        height: 20,
-      }} />
+        position: "relative",
+        width: "100vw",
+        height: "100vh",
+      }}
+    >
+      <div
+        style={{
+          position: "absolute",
+          backgroundColor: "red",
+          borderRadius: "50%",
+          transform: `translate(${position.x}px, ${position.y}px)`,
+          left: -10,
+          top: -10,
+          width: 20,
+          height: 20,
+        }}
+      />
     </div>
-  )
+  );
 }
