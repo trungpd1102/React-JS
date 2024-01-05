@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./logo÷.svg";
+import logo from "./logo.svg";
 import "./App.css";
 
 // import SwitchComponent from './components/SwitchComponent/SwitchComponent';
@@ -12,19 +12,19 @@ import "./App.css";
 // import Menu from './components/Menu/Menu'
 // import MenuTypable from './components/Menu/MenuTypable'
 // import FlatTree from "./components/FlatTree/FlatTree";
-// import FlatTreeRegression from "./components/FlatTree/FlatTreeRegression";
+import FlatTreeRegression from "./components/FlatTree/FlatTreeRegression";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        {/* <ListView></ListView>
+      {/* <header className="App-header"> */}
+      {/* <ListView></ListView>
         <CusButton></CusButton> */}
-        {/* <CoupleButtons></CoupleButtons> */}
-        {/* <Menu></Menu>
+      {/* <CoupleButtons></CoupleButtons> */}
+      {/* <Menu></Menu>
         <MenuTypable></MenuTypable> */}
-      </header>
-      {/* <FlatTreeRegression></FlatTreeRegression> */}
+      {/* </header> */}
+      <FlatTreeRegression></FlatTreeRegression>
       {/* <FlatTree></FlatTree> */}
     </div>
   );
