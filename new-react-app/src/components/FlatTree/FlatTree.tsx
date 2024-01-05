@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { initialTravelPlan, Place } from "./place";
 
-function PlaceTree({ id, placesById }: { id: number; placesById : any}) {
+function PlaceTree({ id, placesById }: Readonly<{ id: number; placesById : any}>) {
   const place = placesById[id];
   const childIds = place.childIds;
   return (
@@ -20,7 +20,7 @@ function PlaceTree({ id, placesById }: { id: number; placesById : any}) {
 
 export default function FlatTree() {
   const [plan, setPlan] = useState(initialTravelPlan);
-  const roots: Place = plan["0"];
+  const roots: Place = plan[0];
   const planetIds: number[] = roots.childIds;
 
   return (

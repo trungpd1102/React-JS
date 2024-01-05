@@ -10,8 +10,8 @@ const initialItems = [
   { title: "crispy seaweed", id: 1 },
   { title: "granola bar", id: 2 },
 ];
-
-export default function Menu({ defaultProp }: { defaultProp: string }) {
+// Readonly props
+export default function Menu({ defaultProp }: Readonly<{ defaultProp: string }>) {
   const [items, setItems] = useState<Item[]>(initialItems);
   const [selectedItem, setSelectedItem] = useState<Item>(items[0]);
 
