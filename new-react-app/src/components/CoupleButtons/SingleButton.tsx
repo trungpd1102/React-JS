@@ -1,21 +1,17 @@
 // import { useState } from 'react';
-import { MouseEventHandler } from 'react'
+import { MouseEventHandler } from 'react';
 
 interface SingleButtonProps {
-  count: number,
-  onClick: MouseEventHandler
+	count: number;
+	onClick: MouseEventHandler;
 }
 
 export default function SingleButton({ onClick, count }: SingleButtonProps) {
-  // const [count, setCount] = useState(0);
+	// const [count, setCount] = useState(0);
 
-  // function handleClick() {
-  //   setCount(count + 1);
-  // }
+	// function handleClick() {
+	//   setCount(count + 1);
+	// }
 
-  return (
-    <button onClick={onClick}>
-      Clicked {count} times
-    </button>
-  );
+	return <button onClick={onClick}>Clicked {count} times</button>;
 }

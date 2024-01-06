@@ -1,15 +1,13 @@
-
 export default function CusButton() {
+	const name = 'Trung';
 
-    const name = 'Trung'
+	function handleButton() {
+		alert('Button is clicked');
+	}
 
-    function handleButton() {
-        alert("Button is clicked")
-    }
-
-    return (
-        <>
-            <button onClick={handleButton}> Custom Button by {name}</button>
-        </>
-    )
+	return (
+		<>
+			<button onClick={handleButton}> Custom Button by {name}</button>
+		</>
+	);
 }

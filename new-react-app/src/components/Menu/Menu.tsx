@@ -1,46 +1,48 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 interface Item {
-  title: string;
-  id: number;
+	title: string;
+	id: number;
 }
 
 const initialItems = [
-  { title: "pretzels", id: 0 },
-  { title: "crispy seaweed", id: 1 },
-  { title: "granola bar", id: 2 },
+	{ title: 'pretzels', id: 0 },
+	{ title: 'crispy seaweed', id: 1 },
+	{ title: 'granola bar', id: 2 },
 ];
 // Readonly props
-export default function Menu({ defaultProp }: Readonly<{ defaultProp: string }>) {
-  const [items, setItems] = useState<Item[]>(initialItems);
-  const [selectedItem, setSelectedItem] = useState<Item>(items[0]);
+export default function Menu({
+	defaultProp,
+}: Readonly<{ defaultProp: string }>) {
+	const [items, setItems] = useState<Item[]>(initialItems);
+	const [selectedItem, setSelectedItem] = useState<Item>(items[0]);
 
-  return (
-    <>
-      <h2>What's your travel snack?</h2>
-      <ul>
-        {items.map((item: Item) => (
-          <li key={item.id} style={{ margin: "5px" }}>
-            {item.title + " "}
-            <button
-              onClick={() => {
-                setSelectedItem(item);
-              }}
-            >
-              Choose
-            </button>
-          </li>
-        ))}
-      </ul>
-      <p>
-        You picked{" "}
-        <span style={{ color: "lightsalmon" }}>{selectedItem.title}</span>.
-      </p>
-      <p> Default prop: {defaultProp}</p>
-    </>
-  );
+	return (
+		<>
+			<h2>What's your travel snack?</h2>
+			<ul>
+				{items.map((item: Item) => (
+					<li key={item.id} style={{ margin: '5px' }}>
+						{item.title + ' '}
+						<button
+							onClick={() => {
+								setSelectedItem(item);
+							}}
+						>
+							Choose
+						</button>
+					</li>
+				))}
+			</ul>
+			<p>
+				You picked{' '}
+				<span style={{ color: 'lightsalmon' }}>{selectedItem.title}</span>.
+			</p>
+			<p> Default prop: {defaultProp}</p>
+		</>
+	);
 }
 
 Menu.defaultProps = {
-  defaultProp: 'OK'
+	defaultProp: 'OK',
 };
